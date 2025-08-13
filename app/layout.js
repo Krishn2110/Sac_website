@@ -1,15 +1,19 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+const DeliusRegular = localFont({
+  src: [
+   
+    {
+      path: "fonts/Delius-Regular.ttf",
+      weight: "700",
+      style: "normal",
+    },
+  ],
+  variable: "--font-delius-regular",
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata = {
   title: "Create Next App",
@@ -20,7 +24,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${DeliusRegular.variable} font-sans antialiased`}
       >
         {children}
       </body>
