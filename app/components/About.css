@@ -5,6 +5,27 @@
   font-family: 'Rajdhani', 'Segoe UI', sans-serif;
 }
 
+/* Hero section specific styles */
+.hero-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 100%);
+  z-index: 1;
+}
+
 /* Neon text classes */
 .neon-text-primary {
   color: #00ffcc;
@@ -290,7 +311,7 @@
 }
 
 /* Section styling */
-.hero, .mission, .activities, .team, .contact {
+.about-intro, .mission, .activities, .team, .contact {
   position: relative;
   padding: 80px 0;
   overflow: hidden;
@@ -308,4 +329,19 @@
 /* Footer */
 .footer {
   border-top: 1px solid rgba(0, 255, 204, 0.2);
+}
+
+/* New animations */
+@keyframes bounce-slow {
+  0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+  40% {transform: translateY(-20px);}
+  60% {transform: translateY(-10px);}
+}
+
+.animate-bounce-slow {
+  animation: bounce-slow 2s infinite;
+}
+
+.neon-glow-green {
+  box-shadow: 0 0 15px rgba(0, 255, 204, 0.5), inset 0 0 10px rgba(0, 255, 204, 0.2);
 }
